@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#ff0000"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/hp_home_ewm"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@mipmap/icon_scan_top"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="10"
+            android:background="#fff"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@mipmap/icon_search_home"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="10"
+                android:hint="刘东东"
+                android:textSize="20sp"
+                android:layout_gravity="center_vertical"
+                android:textColor="@null"
+                android:layout_marginLeft="10dp"
+                android:background="@null"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/hp_home_xx"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="5dp"
+            android:src="@mipmap/icon_mes_top"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <!--无线轮播-->
+            <com.hhzmy.view.MyViewPager
+                android:id="@+id/hp_home_vp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </com.hhzmy.view.MyViewPager>
+            <!--签到-->
+            <com.hhzmy.view.MyGridView
+                android:id="@+id/hp_home_myGV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:numColumns="4">
+            </com.hhzmy.view.MyGridView>
+            <!--10点秒杀-->
+            <ImageView
+                android:id="@+id/hp_home_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/hp_home_recyclerView1"
+                android:divider="#ffff0000"
+                android:dividerHeight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </android.support.v7.widget.RecyclerView>
+            <!--傲娇品牌-->
+            <ImageView
+                android:id="@+id/hp_home_iv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"/>
+
+            <com.hhzmy.view.MyGridView
+                android:id="@+id/hp_home_myGV2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:numColumns="2">
+            </com.hhzmy.view.MyGridView>
+            <!--母婴专区-->
+            <ImageView
+                android:id="@+id/hp_home_iv3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/hp_home_iv4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+                <ImageView
+                    android:id="@+id/hp_home_iv5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <com.hhzmy.view.MyGridView
+                android:id="@+id/hp_home_myGV3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:numColumns="4">
+            </com.hhzmy.view.MyGridView>
+            <!--主题特卖-->
+            <ImageView
+                android:id="@+id/hp_home_iv6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"/>
+
+            <com.hhzmy.view.MyListView
+                android:id="@+id/hp_home_lv1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </com.hhzmy.view.MyListView>
+            <!--辣妈拼团-->
+            <ImageView
+                android:id="@+id/hp_home_iv7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"/>
+
+            <com.hhzmy.view.MyListView
+                android:id="@+id/hp_home_lv2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </com.hhzmy.view.MyListView>
+
+            <ImageView
+                android:id="@+id/hp_home_iv8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0.5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="-----到底了，明天10点1元秒杀，千万不要错过哦！-----"
+                android:layout_gravity="center_horizontal"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

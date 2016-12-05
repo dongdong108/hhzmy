@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#fff">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true">
+            <TextView
+                android:id="@+id/gd_details_pic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="图片详情"
+                android:textColor="#ffff51"
+                android:textSize="14sp"/>
+            <TextView
+                android:id="@+id/gd_details_spec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="规格参数"
+                android:textColor="#000"
+                android:layout_marginLeft="20dp"
+                android:textSize="14sp"/>
+            <TextView
+                android:id="@+id/gd_details_pkgs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="包装售后"
+                android:textColor="#000"
+                android:textSize="14sp"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/gd_details_fl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+
+
+</LinearLayout>
