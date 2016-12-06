@@ -50,6 +50,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
+        android:background="#eda200"
+        android:textColor="#fff"
         android:text="下一步"/>
     <TextView
         android:id="@+id/qiyehuiyuan"

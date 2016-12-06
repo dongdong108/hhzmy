@@ -8,9 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bw.honghaizidemo.R;
 import com.hhzmy.activity.LoginActivity;
+import com.hhzmy.tools.ImageLoaderUtils;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -18,11 +22,15 @@ import butterknife.ButterKnife;
 /**
  * Created by asus on 2016/11/8.
  */
-public class HpMyFragment extends Fragment {
+public class HpMyFragment extends Fragment implements View.OnClickListener {
 
 
     @Bind(R.id.touxiang)
     ImageView touxiang;
+    @Bind(R.id.myname)
+    TextView myname;
+    //ImageLoader用到的类
+    private DisplayImageOptions options = ImageLoaderUtils.initOptions();
 
     @Nullable
     @Override
@@ -34,19 +42,29 @@ public class HpMyFragment extends Fragment {
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        touxiang.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getActivity(), LoginActivity.class));
-            }
-        });
+        touxiang.setOnClickListener(this);
         super.onActivityCreated(savedInstanceState);
     }
 
 
     @Override
+    public void onStart() {
+        super.onStart();
+
+    }
+
+    @Override
     public void onDestroyView() {
         super.onDestroyView();
         ButterKnife.unbind(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.touxiang:
+                startActivity(new Intent(getActivity(), LoginActivity.class));
+                break;
+        }
     }
 }

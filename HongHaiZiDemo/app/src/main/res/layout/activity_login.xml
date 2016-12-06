@@ -72,8 +72,11 @@
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:hint="手机号/邮箱/用户名/门店会员卡"
+                android:digits="0123456789"
                 android:textColorHint="#ccc"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:maxLength="13"
+                android:inputType="phone"/>
 
         </LinearLayout>
 
@@ -103,7 +106,10 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:hint="请输入6-20位易购密码"
+                android:inputType="textPassword"
                 android:textColorHint="#ccc"
+                android:digits="0123456789abcdefghigklmnopqrstuvwxyz"
+                android:maxLength="20"
                 android:textSize="15sp" />
             <RadioButton
                 android:id="@+id/pass_rb"
@@ -116,38 +122,39 @@
 
         </LinearLayout>
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#fff"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="15dp"
-                android:text="验证码"
-                android:textSize="17sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:text="验证码"
+        android:textSize="17sp" />
 
-            <com.hhzmy.view.ClearableEditText
-                android:id="@+id/yanzhengma"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@null"
-                android:hint="请输入右侧验证码"
-                android:textColorHint="#ccc"
-                android:textSize="15sp" />
+    <com.hhzmy.view.ClearableEditText
+        android:id="@+id/yanzhengma"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@null"
+        android:hint="请输入右侧验证码"
+        android:textColorHint="#ccc"
+        android:maxLength="4"
+        android:textSize="15sp" />
 
 
-            <ImageView
-                android:id="@+id/yanzhengImg"
-                android:layout_width="100dp"
-                android:layout_marginRight="10dp"
-                android:layout_height="match_parent"
-                android:src="@mipmap/ic_launcher" />
-        </LinearLayout>
-    </LinearLayout>
+    <ImageView
+        android:id="@+id/yanzhengImg"
+        android:layout_width="100dp"
+        android:layout_marginRight="10dp"
+        android:layout_height="match_parent"
+        android:src="@mipmap/ic_launcher" />
+</LinearLayout>
+</LinearLayout>
 
 
 
@@ -162,7 +169,8 @@
             android:id="@+id/dengluanniu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:enabled="false"
+            android:background="#eda200"
+            android:textColor="#fff"
             android:text="登录" />
     </LinearLayout>
 

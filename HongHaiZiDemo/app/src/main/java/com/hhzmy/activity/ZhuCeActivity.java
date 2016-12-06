@@ -59,6 +59,7 @@ public class ZhuCeActivity extends AppCompatActivity implements View.OnClickList
             Toast.makeText(ZhuCeActivity.this, "需要同意", Toast.LENGTH_SHORT).show();
         } else {
             Intent intent = new Intent(ZhuCeActivity.this, SetPassActivity.class);
+            intent.putExtra("phone",phonenum);
             startActivity(intent);
         }
     }

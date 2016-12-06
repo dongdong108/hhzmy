@@ -3,6 +3,8 @@ package com.hhzmy.tools;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
+import java.util.Map;
+
 /**
  * Created by asus on 2016/11/15.
  */
@@ -36,6 +38,9 @@ public class Tools {
             "DqhJbS0GJm7f8 1vRiLKtOwKjdiz9oMEwxhc/5fysfMbercidRmlCDPU9BNL1UPb9bAx25JwIDAQAB";
     //图片前面的路径
     public static String URL = "http://image1.suning.cn/";
+
+    // 用于存放倒计时时间
+    public static Map<String, Long> map;
 
     //webview加载布局方法
     public static void getWebView(WebView webView,String path){
