@@ -161,6 +161,7 @@
         </activity>
         <!--<service android:name="com.sina.weibo.sdk.net.DownloadService"-->
             <!--android:exported="false"></service>-->
+        <!--分享-->
     </application>
 
 

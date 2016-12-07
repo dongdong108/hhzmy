@@ -39,7 +39,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.0.0'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.squareup.okhttp3:okhttp:3.4.2'
-    compile 'com.google.code.gson:gson:2.8.0'
+//    compile 'com.google.code.gson:gson:2.8.0'
     compile 'com.jiechic.library:xUtils:2.6.14'
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     compile 'com.hovans.recyclerview:library:0.1.0'
@@ -52,4 +52,5 @@ dependencies {
     compile files('libs/alipaySdk-20161009.jar')
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile files('libs/umeng_social_shareboard.jar')
+    compile files('libs/CCP_REST_SMS_SDK_JAVA_v2.6.3r.jar')
 }

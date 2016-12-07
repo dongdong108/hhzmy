@@ -106,7 +106,5 @@
         android:layout_marginTop="30dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:background="#eda200"
-        android:textColor="#fff"
         android:text="提交"/>
 </LinearLayout>

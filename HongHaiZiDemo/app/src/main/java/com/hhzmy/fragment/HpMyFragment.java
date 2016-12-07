@@ -43,15 +43,21 @@ public class HpMyFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         touxiang.setOnClickListener(this);
+        //得到传过来的值
+//        getDatas();
         super.onActivityCreated(savedInstanceState);
     }
 
+//    private void getDatas() {
+//        Bundle bundle = getArguments();
+//        tou = bundle.getString("touxiang");
+//        name = bundle.getString("name");
+//        if (name!=null&&tou!=null){
+//            myname.setText(name);
+//            ImageLoader.getInstance().displayImage(tou, touxiang, options);
+//        }
+//    }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-
-    }
 
     @Override
     public void onDestroyView() {
@@ -63,8 +69,20 @@ public class HpMyFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.touxiang:
-                startActivity(new Intent(getActivity(), LoginActivity.class));
+                startActivityForResult(new Intent(getActivity(), LoginActivity.class),66);
                 break;
         }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        //得到返回来的值
+        String tou = data.getStringExtra("tou");
+        String name = data.getStringExtra("name");
+        //设置值
+        myname.setText(name);
+        ImageLoader.getInstance().displayImage(tou, touxiang, options);
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }

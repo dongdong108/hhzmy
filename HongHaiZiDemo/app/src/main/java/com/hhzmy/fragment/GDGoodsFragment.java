@@ -8,17 +8,23 @@ import android.support.v4.view.ViewPager;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.style.ImageSpan;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bw.honghaizidemo.R;
 import com.hhzmy.activity.MapActivity;
 import com.hhzmy.adapter.GDGoodsPagerAdapter;
 import com.hhzmy.bean.HomeBean;
+import com.umeng.socialize.ShareAction;
+import com.umeng.socialize.UMShareListener;
+import com.umeng.socialize.bean.SHARE_MEDIA;
 
 import java.util.ArrayList;
 import java.util.regex.Matcher;
@@ -50,6 +56,8 @@ public class GDGoodsFragment extends Fragment implements View.OnClickListener {
     TextView gdGoodsTitle;
     @Bind(R.id.gd_goods_rl)
     RelativeLayout gdGoodsRl;
+    @Bind(R.id.iv_fen)
+    ImageView ivFen;
     private ArrayList<View> mListVp;
     private SpannableStringBuilder builder;
     private String mPath = "http://mock.eoapi.cn/success/L11SvLlRPNYsdV5F6df54qhT7VHcr6CJ";
@@ -83,6 +91,7 @@ public class GDGoodsFragment extends Fragment implements View.OnClickListener {
         //设置数据
         setTexts();
         gdGoodsRl.setOnClickListener(this);
+        ivFen.setOnClickListener(this);
         super.onActivityCreated(savedInstanceState);
     }
 
@@ -169,8 +178,39 @@ public class GDGoodsFragment extends Fragment implements View.OnClickListener {
             case R.id.gd_goods_rl:
                 startActivityForResult(new Intent(getActivity(), MapActivity.class), 99);
                 break;
+
+            case R.id.iv_fen:
+                new ShareAction(getActivity()).setPlatform(SHARE_MEDIA.QQ)
+                        .withText(gdGoodsTitle.getText().toString().trim())
+                        .withTitle("红孩子母婴")
+                        .setCallback(umShareListener)
+                        .share();
+                break;
         }
     }
+    //分享
+    private UMShareListener umShareListener = new UMShareListener() {
+        @Override
+        public void onResult(SHARE_MEDIA platform) {
+            Log.d("plat","platform"+platform);
+
+            Toast.makeText(getActivity(), platform + " 分享成功啦", Toast.LENGTH_SHORT).show();
+
+        }
+
+        @Override
+        public void onError(SHARE_MEDIA platform, Throwable t) {
+            Toast.makeText(getActivity(),platform + " 分享失败啦", Toast.LENGTH_SHORT).show();
+            if(t!=null){
+                Log.d("throw","throw:"+t.getMessage());
+            }
+        }
+
+        @Override
+        public void onCancel(SHARE_MEDIA platform) {
+            Toast.makeText(getActivity(),platform + " 分享取消了", Toast.LENGTH_SHORT).show();
+        }
+    };
 
 
 }

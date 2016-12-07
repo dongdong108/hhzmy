@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
 import android.text.Spannable;
 import android.text.SpannableString;
+import android.text.TextWatcher;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.Button;
@@ -35,6 +37,7 @@ public class ZhuCeActivity extends AppCompatActivity implements View.OnClickList
     CheckBox checkBox;
     @Bind(R.id.pohne)
     ClearableEditText phone;
+    private String num;
 
 
     @Override
@@ -47,6 +50,35 @@ public class ZhuCeActivity extends AppCompatActivity implements View.OnClickList
         tvandImg();
 //        phone.addTextChangedListener(new PhoneTextWatcher(phone));
         yibu.setOnClickListener(this);
+        //设置button的可点击
+        setBtn();
+    }
+
+    private void setBtn() {
+        phone.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (!phone.getText().toString().trim().isEmpty()) {
+                    //设置背景
+                    yibu.setBackgroundColor(Color.parseColor("#ffff99"));
+                    yibu.setEnabled(true);
+
+                } else {
+                    yibu.setBackgroundColor(Color.parseColor("#cccccc"));
+                    yibu.setEnabled(false);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
     }
 
     public void xiayibu(View view) {
@@ -58,11 +90,14 @@ public class ZhuCeActivity extends AppCompatActivity implements View.OnClickList
         } else if (!checkBox.isChecked()) {
             Toast.makeText(ZhuCeActivity.this, "需要同意", Toast.LENGTH_SHORT).show();
         } else {
+
             Intent intent = new Intent(ZhuCeActivity.this, SetPassActivity.class);
             intent.putExtra("phone",phonenum);
             startActivity(intent);
         }
     }
+
+
 
     /*检查字符串是否为电话号码的方法,并回传true or false的判断值*/
     public static boolean isPhoneNumberValid(String mobiles) {

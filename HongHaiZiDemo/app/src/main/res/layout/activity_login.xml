@@ -169,8 +169,7 @@
             android:id="@+id/dengluanniu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#eda200"
-            android:textColor="#fff"
+            android:enabled="false"
             android:text="登录" />
     </LinearLayout>
 
